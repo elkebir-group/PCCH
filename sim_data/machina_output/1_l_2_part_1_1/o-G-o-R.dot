@@ -1,0 +1,17 @@
+digraph barS {
+	{
+		rank=same
+	2 [shape=box,penwidth=3,colorscheme=set19,color=1289903504,label="o"]
+	}
+	{
+		rank=same
+	}
+	1 [shape=box,penwidth=3,colorscheme=set19,color=2,label="b"]
+	0 [shape=box,penwidth=3,colorscheme=set19,color=1,label="a"]
+	2 -> 0 [penwidth=3,colorscheme=set19,color="1289903504;0.5:1"]
+	2 -> 1 [penwidth=3,colorscheme=set19,color="1289903504;0.5:2"]
+	1 -> 0 [penwidth=3,colorscheme=set19,color="2;0.5:1"]
+	1 -> 0 [penwidth=3,colorscheme=set19,color="2;0.5:1"]
+	0 -> 1 [penwidth=3,colorscheme=set19,color="1;0.5:2"]
+	0 -> 1 [penwidth=3,colorscheme=set19,color="1;0.5:2"]
+}
