@@ -1,0 +1,15 @@
+digraph G {
+	6 [penwidth=3,colorscheme=set19,color=1289903504,label="(o,0)"]
+	5 [penwidth=3,colorscheme=set19,color=2,label="(b,1)"]
+	4 [penwidth=3,colorscheme=set19,color=1,label="(a,2)"]
+	3 [penwidth=3,colorscheme=set19,color=2,label="(b,2)"]
+	2 [penwidth=3,colorscheme=set19,color=1,label="(a,1)"]
+	1 [penwidth=3,colorscheme=set19,color=2,label="(b,0)"]
+	0 [penwidth=3,colorscheme=set19,color=1,label="(a,0)"]
+	6 -> 5 [penwidth=3,colorscheme=set19,color="1289903504;0.5:2"]
+	6 -> 0 [penwidth=3,colorscheme=set19,color="1289903504;0.5:1"]
+	5 -> 2 [penwidth=3,colorscheme=set19,color="2;0.5:1"]
+	2 -> 3 [penwidth=3,colorscheme=set19,color="1;0.5:2"]
+	1 -> 4 [penwidth=3,colorscheme=set19,color="2;0.5:1"]
+	0 -> 1 [penwidth=3,colorscheme=set19,color="1;0.5:2"]
+}
