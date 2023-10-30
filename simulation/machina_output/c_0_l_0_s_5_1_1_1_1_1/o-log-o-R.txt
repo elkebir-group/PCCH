@@ -1,0 +1,58 @@
+
+Gurobi 9.0.2 (linux64, C++) logging started Fri Aug 18 12:20:54 2023
+
+Academic license - for non-commercial use only
+Gurobi Optimizer version 9.0.2 build v9.0.2rc0 (linux64)
+Optimize a model with 527942 rows, 142390 columns and 1464147 nonzeros
+Model fingerprint: 0x8460c4bd
+Variable types: 0 continuous, 142390 integer (142390 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [3e-03, 1e+00]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+
+Warning: Completing partial solution with 141638 unfixed non-continuous variables out of 142390
+User MIP start produced solution with objective 40.125 (0.85s)
+Loaded user MIP start with objective 40.125
+
+Presolve removed 444227 rows and 135880 columns (presolve time = 6s) ...
+Presolve removed 478520 rows and 137399 columns
+Presolve time: 9.79s
+Presolved: 49422 rows, 4991 columns, 153867 nonzeros
+Found heuristic solution: objective 39.1250000
+Variable types: 0 continuous, 4991 integer (4991 binary)
+
+Root simplex log...
+
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+       0    1.1000000e+01   0.000000e+00   7.300000e+01     11s
+    5305    1.5125000e+01   0.000000e+00   0.000000e+00     12s
+    5305    1.5125000e+01   0.000000e+00   0.000000e+00     12s
+
+Root relaxation: objective 1.512500e+01, 5305 iterations, 0.83 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   15.12500    0  159   39.12500   15.12500  61.3%     -   13s
+H    0     0                      15.2397959   15.12500  0.75%     -   16s
+     0     0   15.16709    0  140   15.23980   15.16709  0.48%     -   18s
+     0     0   15.20380    0  182   15.23980   15.20380  0.24%     -   19s
+
+Cutting planes:
+  Gomory: 8
+  Implied bound: 55
+  Clique: 17
+  MIR: 14
+  Zero half: 35
+  RLT: 108
+  BQP: 5
+
+Explored 1 nodes (16531 simplex iterations) in 19.68 seconds
+Thread count was 28 (of 28 available processors)
+
+Solution count 3: 15.2398 39.125 40.125 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.523979591837e+01, best bound 1.523979591837e+01, gap 0.0000%
