@@ -118,8 +118,6 @@ def TCC(T, M=None):
 import time
 t = time.time()
 T = read_from_file(sys.argv[1], sys.argv[2])
-# print(TCC(T), time.time() - t)
-TCC(T)
-print(time.time() - t)
+print(TCC(T), time.time() - t)
 
 

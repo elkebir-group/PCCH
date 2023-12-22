@@ -11,7 +11,7 @@ def process_args():
     parser = argparse.ArgumentParser(description='PCC')
 
     parser.add_argument('phylogeny', type=str, help='Input phylogeny')
-    parser.add_argument('vertex_labeling', type=str, help='Input leaf labeling')
+    parser.add_argument('vertex_labeling', type=str, help='Input location labeling')
 
     parser.add_argument('-c', '--colormap', metavar='COLORMAP', type=str, help='Color map file', action='store')
     parser.add_argument('--log', action='store_true', default=False, help='Outputs Gurobi logging')
