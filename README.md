@@ -16,7 +16,8 @@ Parsimonious Consistent Comigration History (PCCH) is a computational tool for i
 
 # Table of Contents
 1. [Installation](##installation)
-2. [Usage instruction](##usage-instruction)
+2. [Usage instruction](#usage-instruction)
+3. [Workflow](#workflow)
 
 ## Installation
 
@@ -61,7 +62,7 @@ All of the tools take as input two files: a tree file and a location/leaf labeli
 
 ### Usage
 
-`TCC.py` takes as input a tree file and a location labeling file only, and no optional arguments.
+`TCC.py` takes as input a tree file and a location labeling file only, and no optional arguments. It prints whether the input is temporally consistent, the number of migrations and comigrations, and the running time.
 
         usage: TCC.py phylogeny location_labeling
 
@@ -74,9 +75,9 @@ All of the tools take as input two files: a tree file and a location/leaf labeli
 An example execution
 
         $ python TCC.py t.tree l.labeling
-        true         0.006915225982666
+        True         7      6       0.006915225982666
 
-`PCC` takes as input a tree file and a location labeling file along with optional arguments.
+`PCC` takes as input a tree file and a location labeling file along with optional arguments. It prints the primary location, the number of comigrations, if the solution is optimal, and the running time.
 
         usage: PCC.py [-h] [-p PRIMARY] [--log] [-o OUTPUT] [-t THREADS]
                     phylogeny leaf_labeling
@@ -102,7 +103,7 @@ An example execution
         $ python PCC.py t.tree l.labeling
         a-      6       Optimal         0.366915225982666
 
-`PCCH` takes as input a tree file and a location labeling file along with optional arguments.
+`PCCH` takes as input a tree file and a location labeling file along with optional arguments. It prints the primary location, the number of migrations and comigrations, if the solution is optimal, and the running time.
 
         usage: PCCH.py [-h] [-p PRIMARY] [-c COLORMAP] [--log] [-o OUTPUT] [-t THREADS]
                     phylogeny leaf_labeling
@@ -130,3 +131,14 @@ An example execution
         $ python PCCH.py t.tree l.labeling
         a-      7       6       Optimal         1.366915225982666
         
+## Workflow
+
+The workflow takes as input a tree file and a location labeling file (possibly generated from *MACHINA*), and first runs TCC. If it is not temporally consistent, then the workflow runs PCC and infers temporally consistent set of comigrations. If the number of comigrations inferred by PCC is bigger than the number of comigrations inferred by MACHINA, then the workflow runs PCCH and returns the new location labeling.
+
+        $ ./workflow.sh t.tree l.labeling output_folder
+        > Running TCC
+        > Temporally consistent # prints and stops if temporally consistent
+        > Running PCC
+        > PCC matches the number of comigrations inferred by MACHINA # prints and stops if PCC matches the number of comigrations inferred by MACHINA
+        > Running PCCH
+        > a-      7       6       Optimal         1.366915225982666
